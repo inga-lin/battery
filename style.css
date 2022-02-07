@@ -1,0 +1,172 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ba{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+ }
+
+ .battery {
+    
+    width: 300px;
+    height: 100px;
+    background-color: rgb(12, 11, 11);
+    border: 10px solid rgb(75, 71, 71);
+    border-radius: 1em;
+}
+
+.pim{
+    position: relative;
+    background-color: rgb(75, 71, 71);
+    width: 30px;
+    height: 30px;
+    top: -60px;
+    left: 280px;
+    border-radius: 0.4em;
+}
+.battery > .bar {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.bar > .loading1 {
+    background-color: rgb(17, 192, 26);
+    width: 100%;
+    height: 100%;
+    animation-name: loading;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes loading {    
+    0% {
+        width: 100%;
+        background-color: rgb(8, 141, 59);
+    }
+    10%{
+        width: 90%;
+    }
+    20%{
+        width: 80%;
+    }
+    30%{
+        width: 70%;
+    }
+    40%{
+        width: 60%;
+    }
+    50% {
+        width: 50%;
+        background-color: rgb(211, 164, 12);
+    }
+    60%{
+        width: 40%;
+    }
+    70%{
+        width: 30%;
+    }
+    80%{
+        width: 20%;
+    }
+    90%{
+        width: 10%;
+    }
+    100% {
+        width: 0%;
+        background-color: red;
+    }
+}
+
+.bar > .loading2 {
+    background-color: rgb(17, 192, 26);
+    width: 100%;
+    height: 100%;
+    animation-name: loading2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes loading2{
+    0% {
+        width: 0%;
+        background-color: rgb(240, 40, 13);
+    }
+    50% {
+        width: 50%;
+        background-color: rgb(211, 164, 12);
+    }
+    100% {
+        width: 100%;
+        background-color: rgb(8, 141, 59);
+    }
+
+}
+
+
+
+
+
+/*@keyframes loading {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 300px;
+    }
+}
+
+
+/*.mouse {
+    font-size: 30px;
+    width: 1em;
+    height: 1.6em;
+    background-color: transparent;
+    border: 0.1em solid #fff;
+    border-radius: 0.5em;
+    position: relative;
+}*/
+.mouse::before { /*psiaudo elementas pagaliukas*/
+    content: '';
+    display: block;
+    width: 0.12em;
+    height: 0.18em;
+    border-radius: 0.06em;/*suapvalinam pagaliuka*/
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 0.2em;/*judam nuo cia*/
+    transform: translateX(-50%);
+    animation: scrolling;/*keframes pavadinima nurodem*/
+    animation-duration: 1.4s;/*per liek s nusileido*/
+    animation-iteration-count: infinite;/*juda daug katru*/
+}
+
+@keyframes scrolling { /*aprasom kaip kada judeti*/
+    0% {/*turi pradeti judam nuo cia*/
+        top: 0.2em;
+        background-color: aqua;/*ir galima dar daugiau stiliu prirasyti, width, border-radijus ir t.t.*/
+        opacity: 1;
+    }
+    50% { /*per animacijos viduri daryk taip*/
+        opacity: 1;
+    }
+    100% {/*turi baigti*/
+        top: 1em;
+        background-color: rgb(68, 0, 255);
+        opacity: 0;
+    }
+}
