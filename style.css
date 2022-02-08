@@ -4,7 +4,7 @@ body * {
     padding: 0;
     vertical-align: top;
     box-sizing: border-box;
-    
+
 }
 
 body {
@@ -15,10 +15,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
- }
+}
 
- .battery {
-    
+.battery {
     width: 300px;
     height: 100px;
     background-color: rgb(12, 11, 11);
@@ -35,6 +34,7 @@ body {
     left: 280px;
     border-radius: 0.4em;
 }
+
 .battery > .bar {
     background-color: transparent;
     width: 100%;
@@ -42,7 +42,6 @@ body {
 }
 
 .bar > .loading1 {
-    background-color: rgb(17, 192, 26);
     width: 100%;
     height: 100%;
     animation-name: loading;
@@ -95,7 +94,7 @@ body {
     width: 100%;
     height: 100%;
     animation-name: loading2;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -116,57 +115,120 @@ body {
 
 }
 
+/* .battery {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(12, 11, 11);
+    border: 10px solid rgb(75, 71, 71);
+    border-radius: 1em;
+}*/
 
+.batts {
+    display: flex;
+}
+.vaikas {
+    width: 50px;
+    height: 85px;
+    border: 10px solid rgb(75, 71, 71);
+}
 
+.bar > .loading3 {
+    background-color: rgb(17, 192, 26);
+    width: 100%;
+    height: 100%;
+    animation-name: loading3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
-
-/*@keyframes loading {
+@keyframes loading3{
     0% {
-        width: 0px;
+        width: 0%;
+        background-color: rgb(240, 40, 13);
+    }
+    50% {
+        width: 50%;
+        background-color: rgb(211, 164, 12);
     }
     100% {
-        width: 300px;
+        width: 100%;
+        background-color: rgb(8, 141, 59);
     }
+
 }
 
-
-/*.mouse {
-    font-size: 30px;
-    width: 1em;
-    height: 1.6em;
-    background-color: transparent;
-    border: 0.1em solid #fff;
-    border-radius: 0.5em;
-    position: relative;
-}*/
-.mouse::before { /*psiaudo elementas pagaliukas*/
-    content: '';
-    display: block;
-    width: 0.12em;
-    height: 0.18em;
-    border-radius: 0.06em;/*suapvalinam pagaliuka*/
-    background-color: #fff;
+.clock {
+    margin-top: 50px;
+    border: 3px solid red;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     position: absolute;
-    left: 50%;
-    top: 0.2em;/*judam nuo cia*/
-    transform: translateX(-50%);
-    animation: scrolling;/*keframes pavadinima nurodem*/
-    animation-duration: 1.4s;/*per liek s nusileido*/
-    animation-iteration-count: infinite;/*juda daug katru*/
 }
 
-@keyframes scrolling { /*aprasom kaip kada judeti*/
-    0% {/*turi pradeti judam nuo cia*/
-        top: 0.2em;
-        background-color: aqua;/*ir galima dar daugiau stiliu prirasyti, width, border-radijus ir t.t.*/
-        opacity: 1;
+.clok1 {
+    margin-top: 50px;
+    
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.clok1::after {/*valandos*/
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 10px;
+    background: rgb(61, 13, 192);
+    border-radius: 3px;
+    animation-name: laikrodis;
+    animation-duration: 216000s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: left;/*rodykle sukasi nuo kaires savo puses*/
+}
+
+.clock::after {/*minutes*/
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 6px;
+    background: black;
+    border-radius: 3px;
+    animation-name: laikrodis;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: left;/*rodykle sukasi nuo kaires savo puses*/
+}
+
+.clock::before {/*sekundes*/
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45%;
+    height: 3px;
+    background: rgb(167, 12, 12);
+    border-radius: 3px;
+    animation-name: laikrodis;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: left;/*rodykle sukasi nuo kaires savo puses*/
+}
+
+@keyframes laikrodis {
+    0% {
+        transform: rotate(-90deg);
     }
-    50% { /*per animacijos viduri daryk taip*/
-        opacity: 1;
-    }
-    100% {/*turi baigti*/
-        top: 1em;
-        background-color: rgb(68, 0, 255);
-        opacity: 0;
+    100% {
+        transform: rotate(270deg);
     }
 }
