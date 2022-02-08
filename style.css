@@ -261,75 +261,6 @@ body {
     }
 
 }
-/*
-.bar1 > .loading5 {
-    background-color: rgb(19, 150, 26);
-    width: 25%;
-    height: 0%;
-    animation-name: loading5;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-    z-index: 10;
-}
-
-@keyframes loading5{
-    0% {
-        width: 25%;
-        opacity: 0;
-    }
-}
-
-.bar > .loading6 {
-    background-color: rgb(140, 192, 17);
-    width: 50%;
-    height: 0;
-    animation-name: loading6;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-}
-
-@keyframes loading6{
-    25% {
-        width: 100%;
-        opacity: 0;
-    }
-
-}
-
-.bar > .loading7 {
-    background-color: rgb(223, 192, 21);
-    width: 75%;
-    height: 0;
-    animation-name: loading7;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-}
-
-@keyframes loading7{
-    50% {
-        width: 50%;
-        opacity: 0;
-    }
-}
-
-.bar > .loading8 {
-    background-color: rgb(190, 66, 8);
-    width: 100%;
-    animation-name: loading8;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
-}
-
-@keyframes loading8{
-    100% {
-        width: 100%;
-        opacity: 0;
-    }
-}*/
 
 .clock {
     margin-top: 50px;
@@ -340,9 +271,8 @@ body {
     position: absolute;
 }
 
-.clok1 {
+.clok1 { /*laikrodis ant laikrodzio*/
     margin-top: 50px;
-    
     width: 300px;
     height: 300px;
     border-radius: 50%;
